@@ -1,0 +1,84 @@
+<div>
+    <label class="text-sm font-medium text-gray-400 mb-2 block">Guitar Theory Lab</label>
+
+    <div class="space-y-3 mt-3">
+        <div>
+            <label class="text-xs text-gray-500 block mb-1">Default Tuning</label>
+            <select id="gt-set-tuning" class="w-full bg-dark-700 border border-gray-700 rounded px-2 py-1 text-xs text-gray-200">
+                <option value="standard">Guitar - Standard</option>
+                <option value="dropD">Guitar - Drop D</option>
+                <option value="halfStepDown">Guitar - Half Step Down</option>
+                <option value="dStandard">Guitar - D Standard</option>
+                <option value="openG">Guitar - Open G</option>
+                <option value="openD">Guitar - Open D</option>
+                <option value="dadgad">Guitar - DADGAD</option>
+                <option value="bass4Standard">Bass 4 - Standard</option>
+                <option value="bass5Standard">Bass 5 - Standard (Low B)</option>
+            </select>
+        </div>
+
+        <div>
+            <label class="text-xs text-gray-500 block mb-1">Fret Count</label>
+            <select id="gt-set-frets" class="w-full bg-dark-700 border border-gray-700 rounded px-2 py-1 text-xs text-gray-200">
+                <option value="12">12 frets</option>
+                <option value="15">15 frets</option>
+                <option value="17">17 frets</option>
+                <option value="22" selected>22 frets</option>
+            </select>
+        </div>
+
+        <div class="flex items-center justify-between">
+            <span class="text-xs text-gray-500">Show intervals by default</span>
+            <input type="checkbox" id="gt-set-intervals" class="rounded bg-dark-700 border-gray-600">
+        </div>
+
+        <div class="flex items-center justify-between">
+            <span class="text-xs text-gray-500">Flip fretboard</span>
+            <input type="checkbox" id="gt-set-flip" class="rounded bg-dark-700 border-gray-600">
+        </div>
+
+        <div class="flex items-center justify-between">
+            <span class="text-xs text-gray-500">Show fret inlays</span>
+            <input type="checkbox" id="gt-set-inlays" class="rounded bg-dark-700 border-gray-600" checked>
+        </div>
+
+        <div>
+            <label class="text-xs text-gray-500 block mb-1">Audio Waveform</label>
+            <select id="gt-set-waveform" class="w-full bg-dark-700 border border-gray-700 rounded px-2 py-1 text-xs text-gray-200">
+                <option value="sine">Sine (smooth)</option>
+                <option value="triangle" selected>Triangle (warm)</option>
+            </select>
+        </div>
+    </div>
+
+    <script>
+    (function() {
+        var ids = {
+            'gt-set-tuning': 'gt_tuningKey',
+            'gt-set-frets': 'gt_fretCount',
+            'gt-set-waveform': 'gt_audioWaveform'
+        };
+        Object.entries(ids).forEach(function(e) {
+            var el = document.getElementById(e[0]);
+            if (el) {
+                var v = localStorage.getItem(e[1]);
+                if (v) el.value = v;
+                el.addEventListener('change', function() { localStorage.setItem(e[1], el.value); });
+            }
+        });
+
+        var checks = {
+            'gt-set-intervals': 'gt_showIntervals',
+            'gt-set-flip': 'gt_flipFretboard',
+            'gt-set-inlays': 'gt_showInlays'
+        };
+        Object.entries(checks).forEach(function(e) {
+            var el = document.getElementById(e[0]);
+            if (el) {
+                el.checked = localStorage.getItem(e[1]) === 'true';
+                el.addEventListener('change', function() { localStorage.setItem(e[1], el.checked); });
+            }
+        });
+    })();
+    </script>
+</div>

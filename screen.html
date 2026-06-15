@@ -1,0 +1,54 @@
+<div id="gt-root" class="flex flex-col h-screen pt-16 bg-dark-900 text-white overflow-hidden">
+
+    <!-- Top bar -->
+    <div class="flex items-center gap-3 px-4 py-2 bg-dark-800 border-b border-gray-800 shrink-0">
+        <button onclick="showScreen('home')" class="text-gray-500 hover:text-white text-sm flex items-center gap-1">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+            </svg> Back
+        </button>
+        <div class="h-4 w-px bg-gray-700"></div>
+        <span class="text-sm font-medium text-gray-300">Guitar Theory Lab</span>
+    </div>
+
+    <!-- Mode tabs -->
+    <div id="gt-tabs" class="flex items-center gap-2 px-4 py-2 bg-dark-800 border-b border-gray-800 shrink-0">
+        <button data-gt-tab="learn" class="px-3 py-1.5 rounded-lg text-xs transition">Learn</button>
+        <button data-gt-tab="practice" class="px-3 py-1.5 rounded-lg text-xs transition">Practice</button>
+        <button data-gt-tab="ear" class="px-3 py-1.5 rounded-lg text-xs transition">Ear Training</button>
+        <button data-gt-tab="jam" class="px-3 py-1.5 rounded-lg text-xs transition">Jam</button>
+    </div>
+
+    <!-- Controls bar (populated by screen.js per mode) -->
+    <div id="gt-controls" class="flex items-center gap-2 px-4 py-2 bg-dark-800/60 border-b border-gray-800/50 shrink-0 flex-wrap"></div>
+
+    <!-- Main content area -->
+    <div id="gt-main" class="flex-1 overflow-auto p-4">
+
+        <!-- Learn mode -->
+        <div id="gt-mode-learn" class="gt-mode hidden">
+            <div id="gt-fretboard-wrap" class="overflow-x-auto"></div>
+        </div>
+
+        <!-- Practice mode -->
+        <div id="gt-mode-practice" class="gt-mode hidden">
+            <div id="gt-practice-content"></div>
+            <div id="gt-practice-fretboard" class="overflow-x-auto mt-4"></div>
+        </div>
+
+        <!-- Ear Training mode -->
+        <div id="gt-mode-ear" class="gt-mode hidden">
+            <div id="gt-ear-content"></div>
+            <div id="gt-ear-fretboard" class="overflow-x-auto mt-4"></div>
+        </div>
+
+        <!-- Jam mode -->
+        <div id="gt-mode-jam" class="gt-mode hidden">
+            <div id="gt-jam-content"></div>
+            <div id="gt-jam-fretboard" class="overflow-x-auto mt-4"></div>
+        </div>
+    </div>
+
+    <!-- Reference / info panel -->
+    <div id="gt-reference" class="shrink-0 px-4 py-2 bg-dark-800 border-t border-gray-800 text-xs text-gray-400 max-h-40 overflow-y-auto"></div>
+</div>

@@ -1,0 +1,12 @@
+{
+  "id": "guitar_theory",
+  "name": "Guitar Theory Lab",
+  "version": "1.0.0",
+  "nav": {
+    "label": "Theory Lab",
+    "screen": "guitar_theory"
+  },
+  "screen": "screen.html",
+  "script": "screen.js",
+  "settings": { "html": "settings.html" }
+}
