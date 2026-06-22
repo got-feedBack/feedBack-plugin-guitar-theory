@@ -8,5 +8,10 @@
   },
   "screen": "screen.html",
   "script": "screen.js",
-  "settings": { "html": "settings.html" }
+  "settings": {
+    "html": "settings.html"
+  },
+  "category": "practice",
+  "description": "Live scale, chord, and key theory overlay.",
+  "icon": "assets/thumb.svg"
 }
