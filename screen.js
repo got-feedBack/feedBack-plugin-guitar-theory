@@ -5834,6 +5834,20 @@ function init() {
   switchMode(S.mode);
 }
 
+// Node-only export hook for tests; browsers fall through to DOM init below.
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = {
+    getNoteDisplayName, getNoteIndex, getNoteAtInterval, getNoteOnFret,
+    getScaleOptions, getChordOptions, getIntervalsByDifficulty, getIntervalOptions,
+    getIntervalBySemitones, getChordQualitiesByDifficulty, getTuningOptions,
+    getScaleNotes, getChordNotes, isNoteInScale, isNoteInChord,
+    getIntervalFromRoot, getIntervalName, generateFretboardData,
+    getHighlightedNotes, getSelectionInfo, getPositionName, getPositionOptions,
+    findNoteOnString, calculateRootFretOffset,
+  };
+  return;
+}
+
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', init);
 } else {
