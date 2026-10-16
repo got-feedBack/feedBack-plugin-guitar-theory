@@ -12,6 +12,6 @@
     "html": "settings.html"
   },
   "category": "practice",
-  "description": "Live scale, chord, and key theory overlay.",
+  "description": "Interactive fretboard for scales, chords, ear training, and jam practice.",
   "icon": "assets/thumb.svg"
 }
