@@ -1,8 +1,8 @@
-# Guitar Theory Lab - Slopsmith Plugin
+# Guitar Theory Lab - feedBack Plugin
 
-An interactive guitar theory learning tool built as a [slopsmith](https://github.com/tborys/slopsmith) plugin. Explore scales, chords, intervals, tunings, and voicings on a fully interactive fretboard - all within the slopsmith UI.
+An interactive guitar theory learning tool built as a [feedBack](https://github.com/got-feedback/feedBack) plugin. Explore scales, chords, intervals, tunings, and voicings on a fully interactive fretboard - all within the feedBack UI.
 
-Ported from the standalone [Guitar Theory Lab](https://github.com/topkoa/guitar-theory-lab) React app into a single-file vanilla JS slopsmith plugin.
+Ported from the standalone [Guitar Theory Lab](https://github.com/topkoa/guitar-theory-lab) React app into a single-file vanilla JS feedBack plugin.
 
 ## Features
 
@@ -59,22 +59,24 @@ Ported from the standalone [Guitar Theory Lab](https://github.com/topkoa/guitar-
 
 ## Installation
 
-### As a slopsmith plugin (recommended)
+Guitar Theory Lab is bundled with the feedBack Desktop app, so desktop users already have it.
 
-Clone this repo into your slopsmith `plugins/` directory:
+### As a feedBack plugin (self-hosted)
+
+Clone this repo into your feedBack `plugins/` directory:
 
 ```bash
-cd /path/to/slopsmith/plugins
-git clone https://github.com/topkoa/slopsmith-plugin-guitar-theory.git guitar_theory
+cd /path/to/feedBack/plugins
+git clone https://github.com/got-feedBack/feedBack-plugin-guitar-theory.git guitar_theory
 ```
 
-Restart slopsmith. "Theory Lab" will appear in the Plugins nav dropdown.
+Restart feedBack. Open **Plugins** in the sidebar and click the **Guitar Theory Lab** pedal.
 
 ### Symlink (for development)
 
 ```bash
-cd /path/to/slopsmith/plugins
-ln -s /path/to/slopsmith-plugin-guitar-theory guitar_theory
+cd /path/to/feedBack/plugins
+ln -s /path/to/feedBack-plugin-guitar-theory guitar_theory
 ```
 
 ## Plugin Structure
@@ -119,7 +121,7 @@ All preferences persist via `localStorage` with the `gt_` prefix. Available in t
 ## Tech
 
 - **Vanilla JS** - no framework dependencies, single IIFE
-- **Tailwind CSS** - uses slopsmith's existing Tailwind setup (dark theme: `bg-dark-900`, accent blue `#4080e0`, gold `#e8c040`)
+- **Tailwind CSS** - uses feedBack's existing Tailwind setup (dark theme: `bg-dark-900`, accent blue `#4080e0`, gold `#e8c040`)
 - **Web Audio API** - oscillator-based note/chord synthesis, precise metronome scheduling via `AudioContext.currentTime`
 - **DOM-based fretboard** - divs for strings/frets/notes (not canvas), supports click handlers and CSS styling
 
